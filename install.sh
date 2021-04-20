@@ -50,4 +50,7 @@ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/s
 
 # Setup gpg agent forwarding
 grep -q "StreamLocalBindUnlink yes" /etc/ssh/sshd_config || sudo sed -i "$ a StreamLocalBindUnlink yes" /etc/ssh/sshd_config
+
+echo ""
+echo ""
 echo "Please import your gpg public key using 'gpg --import [file]'"
