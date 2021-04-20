@@ -2,6 +2,9 @@
 
 # Clone repo
 git clone https://github.com/Shourai/DevelopmentServer.git ~/github/DevelopmentServer
+git -C ~/github/DevelopmentServer remote set-url origin git@github.com:shourai/DevelopmentServer.git
+git -C ~/github/DevelopmentServer config user.name "Shourai"
+git -C ~/github/DevelopmentServer config user.email "10200748+Shourai@users.noreply.github.com"
 
 # Install packages
 sudo add-apt-repository ppa:lazygit-team/release -y
@@ -34,10 +37,10 @@ git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
 
 # Neovim config
 mkdir ~/.config
-ln -s ~/github/DevelopmentServer/nvim/ ~/.config/
+ln -sf ~/github/DevelopmentServer/nvim/ ~/.config/
 
 # SSH config
-ln -s ~/github/DevelopmentServer/ssh/rc ~/.ssh/rc
+ln -sf ~/github/DevelopmentServer/ssh/rc ~/.ssh/rc
 
 # Add SSH keys
 curl https://github.com/shourai.keys > ~/.ssh/authorized_keys
