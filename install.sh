@@ -51,6 +51,23 @@ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/s
 # Setup gpg agent forwarding
 grep -q "StreamLocalBindUnlink yes" /etc/ssh/sshd_config || sudo sed -i "$ a StreamLocalBindUnlink yes" /etc/ssh/sshd_config
 
-echo ""
-echo ""
-echo "Please import your gpg public key using 'gpg --import [file]'"
+# Print info
+echo -e "Setup complete\n"
+echo -e "
+For GPG forwarding to work: 
+import your gpg public key using \e[32m'gpg --import [file]'\e[0m
+"
+
+echo -e "
+For quick access:
+put the following in your \e[32m~/.ssh/config\e[0m file
+
+Host <host>
+    HostName $(ip -f inet address | awk '/inet / { print $2 }' | tail -n 1 | cut -d / -f 1)
+    User $(whoami)
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    RemoteForward $(gpgconf --list-dir agent-socket) /Users/<local user>/.gnupg/S.gpg-agent.extra
+"
+
