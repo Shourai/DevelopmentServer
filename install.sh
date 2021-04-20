@@ -6,6 +6,9 @@ apt update
 apt upgrade -y
 apt install fzf git neovim python3-pip lazygit -y
 
+# Install Ansible
+pip3 install ansible
+
 # Disable news
 sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
 
