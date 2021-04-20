@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Install packages
-add-apt-repository ppa:lazygit-team/release
+add-apt-repository ppa:lazygit-team/release -y
 apt update
-apt upgrade
-apt install fzf git neovim python3-pip lazygit
+apt upgrade -y
+apt install fzf git neovim python3-pip lazygit -y
 
 # Disable news
 sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
