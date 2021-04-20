@@ -10,7 +10,7 @@ sudo apt install fzf git neovim python3-pip lazygit -y
 pip3 install ansible
 
 # Disable news
-sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
+sudo sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
 
 # Add bashrc aliases
 echo "alias lg='lazygit'" > ~/.bash_aliases
@@ -40,8 +40,8 @@ cp ssh/rc ~/.ssh
 curl https://github.com/shourai.keys > ~/.ssh/authorized_keys
 
 # Disable PasswordAuthentication
-sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 
 # Setup gpg agent forwarding
-sed -i "$ a StreamLocalBindUnlink yes" /etc/ssh/sshd_config
+sudo sed -i "$ a StreamLocalBindUnlink yes" /etc/ssh/sshd_config
 echo "Please import your gpg public key using 'gpg --import [file]'"
