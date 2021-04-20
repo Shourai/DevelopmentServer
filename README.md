@@ -1,3 +1,6 @@
 ## Setup
 Quickly set up a Ubuntu development server
-Clone the repo and run the install script with `bash`
+
+```
+curl -fsSL https://github.com/Shourai/DevelopmentServer.git | bash
+```
