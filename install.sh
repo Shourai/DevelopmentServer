@@ -29,8 +29,8 @@ grep -q 'eval "$(lua $HOME/github/z.lua/z.lua --init bash enhanced once echo fzf
 
 # Download tmux conf and apply custom settings
 curl https://raw.githubusercontent.com/Shourai/dotfiles/master/tmux/tmux.conf -o ~/.tmux.conf
-grep -q 'set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"' ~/.tmux.conf || sed -i '$ a set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"' ~/.tmux.conf
-grep -q "set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock" ~/.tmux.conf || sed -i "$ a set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock" ~/.tmux.conf
+sed -i '$ a set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"' ~/.tmux.conf
+sed -i "$ a set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock" ~/.tmux.conf
 
 # Clone z.lua
 git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
