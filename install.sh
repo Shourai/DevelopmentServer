@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Install packages
-add-apt-repository ppa:lazygit-team/release -y
-apt update
-apt upgrade -y
-apt install fzf git neovim python3-pip lazygit -y
+sudo add-apt-repository ppa:lazygit-team/release -y
+sudo apt update
+sudo apt upgrade -y
+sudo apt install fzf git neovim python3-pip lazygit -y
 
 # Install Ansible
 pip3 install ansible
