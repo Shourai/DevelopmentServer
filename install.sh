@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install git
+sudo apt install git
+
 # Clone repo
 git clone https://github.com/Shourai/DevelopmentServer.git ~/github/DevelopmentServer
 git -C ~/github/DevelopmentServer remote set-url origin git@github.com:shourai/DevelopmentServer.git
@@ -10,7 +13,7 @@ git -C ~/github/DevelopmentServer config user.email "10200748+Shourai@users.nore
 sudo add-apt-repository ppa:lazygit-team/release -y
 sudo apt update
 sudo apt upgrade -y
-sudo apt install fzf git neovim python3-pip lazygit -y
+sudo apt install fzf tmux neovim python3-pip lazygit -y
 
 # Install Ansible
 pip3 install ansible
