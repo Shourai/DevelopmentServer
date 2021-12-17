@@ -10,10 +10,17 @@ git -C ~/github/DevelopmentServer config user.name "Shourai"
 git -C ~/github/DevelopmentServer config user.email "10200748+Shourai@users.noreply.github.com"
 
 # Install packages
-sudo add-apt-repository ppa:lazygit-team/release -y
 sudo apt update
 sudo apt upgrade -y
-sudo apt install fzf tmux neovim python3-pip lazygit -y
+sudo apt install fzf tmux neovim python3-pip -y
+
+# Install lazygit
+MY_FLAVOR=Linux_x86_64
+curl -s -L $(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases/latest |
+	grep browser_download_url | 
+	cut -d '"' -f 4 | 
+	grep -i "$MY_FLAVOR") | 
+	sudo tar xzf - -C /usr/local/bin lazygit
 
 # Install Ansible
 pip3 install ansible
