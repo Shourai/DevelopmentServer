@@ -34,7 +34,7 @@ echo "alias vim='nvim'" >> ~/.bash_aliases
 
 # Add custom bindings to bashrc
 grep -q "source /usr/share/doc/fzf/examples/key-bindings.bash" ~/.bashrc || sed -i '$ a source /usr/share/doc/fzf/examples/key-bindings.bash' ~/.bashrc
-grep -q "source /usr/share/doc/fzf/examples/completion.bash" ~/.bashrc || sed -i '$ a source /usr/share/doc/fzf/examples/completion.bash' ~/.bashrc
+#grep -q "source /usr/share/doc/fzf/examples/completion.bash" ~/.bashrc || sed -i '$ a source /usr/share/doc/fzf/examples/completion.bash' ~/.bashrc
 grep -q 'eval "$(lua $HOME/github/z.lua/z.lua --init bash enhanced once echo fzf)"' ~/.bashrc || sed -i '$ a eval "$(lua $HOME/github/z.lua/z.lua --init bash enhanced once echo fzf)"' ~/.bashrc
 
 # Download tmux conf and apply custom settings
