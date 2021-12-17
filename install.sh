@@ -12,7 +12,7 @@ git -C ~/github/DevelopmentServer config user.email "10200748+Shourai@users.nore
 # Install packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install fzf tmux neovim python3-pip -y
+sudo apt install fzf tmux neovim python3-pip lua5.3 -y
 
 # Install lazygit
 MY_FLAVOR=Linux_x86_64
