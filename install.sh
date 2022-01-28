@@ -47,7 +47,7 @@ git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
 
 # Neovim config
 mkdir ~/.config
-git clone git@github.com:Shourai/nvim.git ~/.config/nvim
+git clone https://github.com/Shourai/nvim.git ~/.config/nvim
 
 # SSH config
 ln -sf ~/github/DevelopmentServer/ssh/rc ~/.ssh/rc
