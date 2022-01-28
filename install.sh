@@ -17,9 +17,9 @@ sudo apt install fzf tmux neovim python3-pip lua5.3 -y
 # Install lazygit
 MY_FLAVOR=Linux_x86_64
 curl -s -L $(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases/latest |
-	grep browser_download_url | 
-	cut -d '"' -f 4 | 
-	grep -i "$MY_FLAVOR") | 
+	grep browser_download_url |
+	cut -d '"' -f 4 |
+	grep -i "$MY_FLAVOR") |
 	sudo tar xzf - -C /usr/local/bin lazygit
 
 # Install Ansible
@@ -47,7 +47,7 @@ git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
 
 # Neovim config
 mkdir ~/.config
-ln -sf ~/github/DevelopmentServer/nvim/ ~/.config/
+git clone git@github.com:Shourai/nvim.git ~/.config/nvim
 
 # SSH config
 ln -sf ~/github/DevelopmentServer/ssh/rc ~/.ssh/rc
@@ -64,7 +64,7 @@ grep -q "StreamLocalBindUnlink yes" /etc/ssh/sshd_config || sudo sed -i "$ a Str
 # Print info
 echo -e "Setup complete\n"
 echo -e "
-For GPG forwarding to work: 
+For GPG forwarding to work:
 import your gpg public key using \e[32m'gpg --import [file]'\e[0m
 "
 
