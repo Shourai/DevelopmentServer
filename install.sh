@@ -12,7 +12,12 @@ git -C ~/github/DevelopmentServer config user.email "10200748+Shourai@users.nore
 # Install packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install fzf tmux neovim python3-pip lua5.3 -y
+sudo apt install fzf tmux python3-pip lua5.3 -y
+
+# Install neovim
+PACKAGE=linux64.tar.gz
+curl -s -L $(curl -s https://api.github.com/repos/neovim/neovim/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep -i $PACKAGE$) | tar xzf -
+sudo cp nvim-linux64/bin/nvim /bin/nvim
 
 # Install lazygit
 MY_FLAVOR=Linux_x86_64
