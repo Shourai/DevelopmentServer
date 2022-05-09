@@ -22,9 +22,6 @@ curl -s -L $(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases
 	grep -i "$MY_FLAVOR") |
 	sudo tar xzf - -C /usr/local/bin lazygit
 
-# Install Ansible
-pip3 install ansible
-
 # Disable news
 sudo sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
 
