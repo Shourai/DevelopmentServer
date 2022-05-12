@@ -20,7 +20,7 @@ export PS1='"'"'\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[
 # Install packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install fzf tmux python3-pip lua5.3 -y
+sudo apt install fzf tmux python3-pip lua5.3 xclip -y
 
 # Install neovim
 PACKAGE=linux64.tar.gz
