@@ -23,8 +23,7 @@ sudo apt upgrade -y
 sudo apt install fzf tmux python3-pip lua5.3 xclip -y
 
 # Install neovim
-PACKAGE=linux64.tar.gz
-curl -s -L $(curl -s https://api.github.com/repos/neovim/neovim/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep -i $PACKAGE$) | tar xzf -
+curl -sL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar -xzf - -C $HOME
 sudo ln -fs $HOME/nvim-linux64/bin/nvim /usr/bin/nvim
 
 # Install lazygit
