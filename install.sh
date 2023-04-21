@@ -16,7 +16,7 @@ sudo apt install fzf tmux python3-pip lua5.4 xclip golang npm -y
 
 # Install neovim
 curl -sL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar -xzf - -C $HOME
-sudo ln -fs $HOME/nvim-linux64/bin/nvim /usr/bin/nvim
+ln -fs $HOME/nvim-linux64/bin/nvim ~/.local/bin/
 
 # Install lazygit
 MY_FLAVOR=Linux_x86_64
@@ -24,7 +24,7 @@ curl -s -L $(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases
 	grep browser_download_url |
 	cut -d '"' -f 4 |
 	grep -i "$MY_FLAVOR") |
-	sudo tar xzf - -C /usr/local/bin lazygit
+	tar xzf - -C ~/.local/bin/ lazygit
 
 # Disable news
 sudo sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
