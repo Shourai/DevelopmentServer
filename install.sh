@@ -12,7 +12,7 @@ git -C ~/github/DevelopmentServer config user.email "10200748+Shourai@users.nore
 # Install packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install fzf tmux python3-pip lua5.3 xclip -y
+sudo apt install fzf tmux python3-pip lua5.4 xclip golang npm -y
 
 # Install neovim
 curl -sL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar -xzf - -C $HOME
