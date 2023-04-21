@@ -53,15 +53,8 @@ curl https://github.com/shourai.keys > ~/.ssh/authorized_keys
 # Disable PasswordAuthentication
 sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 
-# Setup gpg agent forwarding
-grep -q "StreamLocalBindUnlink yes" /etc/ssh/sshd_config || sudo sed -i "$ a StreamLocalBindUnlink yes" /etc/ssh/sshd_config
-
 # Print info
 echo -e "Setup complete\n"
-echo -e "
-For GPG forwarding to work:
-import your gpg public key using \e[32m'gpg --import [file]'\e[0m
-"
 
 echo -e "
 For quick access:
@@ -73,6 +66,5 @@ Host <host>
     ForwardAgent yes
     ForwardX11 yes
     ForwardX11Trusted yes
-    RemoteForward $(gpgconf --list-dir agent-socket) /Users/<local user>/.gnupg/S.gpg-agent.extra
 "
 
