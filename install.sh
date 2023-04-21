@@ -47,9 +47,6 @@ git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
 mkdir ~/.config
 git clone https://github.com/Shourai/nvim.git ~/.config/nvim
 
-# SSH config
-ln -sf ~/github/DevelopmentServer/ssh/rc ~/.ssh/rc
-
 # Add SSH keys
 curl https://github.com/shourai.keys > ~/.ssh/authorized_keys
 
