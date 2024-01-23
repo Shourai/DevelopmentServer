@@ -12,6 +12,7 @@ git -C ~/github/DevelopmentServer config user.email "10200748+Shourai@users.nore
 # Install packages
 sudo apt update
 sudo apt upgrade -y
+sudo apt install dialog apt-utils # Needed for minimal ubuntu server install
 sudo apt install fzf tmux python3-pip lua5.4 xclip golang npm -y
 
 # Install neovim
