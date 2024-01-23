@@ -31,7 +31,9 @@ curl -s -L $(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases
 	tar xzf - -C ~/.local/bin/ lazygit
 
 # Disable news
-sudo sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
+if [ -f /etc/default/motd-news ]; then
+  sudo sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
+fi
 
 # Add bashrc aliases
 echo "alias lg='lazygit'" > ~/.bash_aliases
