@@ -16,7 +16,10 @@ mkdir -p ~/.local/bin
 sudo apt update
 sudo apt upgrade -y
 sudo apt install dialog apt-utils # Needed for minimal ubuntu server install
-sudo apt install fzf tmux python3-pip lua5.4 xclip golang npm -y
+sudo apt install tmux python3-pip lua5.4 xclip golang npm -y
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # Install neovim
 curl -sL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar -xzf - -C $HOME
@@ -40,7 +43,6 @@ echo "alias lg='lazygit'" > ~/.bash_aliases
 echo "alias vim='nvim'" >> ~/.bash_aliases
 
 # Add custom bindings to bashrc
-grep -q "source /usr/share/doc/fzf/examples/key-bindings.bash" ~/.bashrc || sed -i '$ a source /usr/share/doc/fzf/examples/key-bindings.bash' ~/.bashrc
 grep -q 'eval "$(lua $HOME/github/z.lua/z.lua --init bash enhanced once echo fzf)"' ~/.bashrc || sed -i '$ a eval "$(lua $HOME/github/z.lua/z.lua --init bash enhanced once echo fzf)"' ~/.bashrc
 
 # Download tmux conf and apply custom settings
