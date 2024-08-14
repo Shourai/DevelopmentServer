@@ -54,9 +54,6 @@ git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
 mkdir ~/.config
 git clone https://github.com/Shourai/nvim.git ~/.config/nvim
 
-# Add SSH keys
-curl https://github.com/shourai.keys > ~/.ssh/authorized_keys
-
 # Disable PasswordAuthentication
 sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 
