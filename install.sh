@@ -32,6 +32,16 @@ curl -s -L $(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases
 	grep -i "$MY_FLAVOR") |
 	tar xzf - -C ~/.local/bin/ lazygit
 
+# Add path to bashrc
+STRING="export PATH=\"\$PATH:~/.local/bin\""
+FILE="$HOME/.bashrc"
+if  grep -q "$STRING" "$FILE" ; then
+         echo 'the string exists' ;
+else
+         echo 'Added $STRING to bashrc' ;
+         echo $STRING >> $FILE ;
+fi
+
 # Disable news
 if [ -f /etc/default/motd-news ]; then
   sudo sed -i 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
