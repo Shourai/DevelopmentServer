@@ -15,7 +15,7 @@ mkdir -p ~/.local/bin
 # Install packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install tmux python3-pip lua5.4 -y
+sudo apt install tmux python3-pip lua5.4 npm unzip -y
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
