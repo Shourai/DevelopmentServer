@@ -15,8 +15,7 @@ mkdir -p ~/.local/bin
 # Install packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install dialog apt-utils # Needed for minimal ubuntu server install
-sudo apt install tmux python3-pip lua5.4 xclip golang npm -y
+sudo apt install tmux python3-pip lua5.4 -y
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
