@@ -15,7 +15,7 @@ mkdir -p ~/.local/bin
 # Install packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install tmux python3-pip python3-venv lua5.4 npm unzip -y
+sudo apt install tmux python3-pip python3-venv npm unzip -y
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
@@ -51,14 +51,21 @@ fi
 echo "alias lg='lazygit'" > ~/.bash_aliases
 echo "alias vim='nvim'" >> ~/.bash_aliases
 
-# Add custom bindings to bashrc
-grep -q 'eval "$(lua $HOME/github/z.lua/z.lua --init bash enhanced once echo fzf)"' ~/.bashrc || sed -i '$ a eval "$(lua $HOME/github/z.lua/z.lua --init bash enhanced once echo fzf)"' ~/.bashrc
+# Check if eval "$(zoxide init bash)" is already in .bashrc
+if ! grep -Fxq 'eval "$(zoxide init bash)"' ~/.bashrc
+then
+    # Use sed to append the line to the end of .bashrc
+    sed -i -e '$a eval "$(zoxide init bash)"' ~/.bashrc
+    echo "zoxide initialization added to .bashrc"
+else
+    echo "zoxide initialization already present in .bashrc"
+fi
 
 # Download tmux conf and apply custom settings
 curl https://raw.githubusercontent.com/Shourai/dotfiles/master/tmux/tmux.conf -o ~/.tmux.conf
 
-# Clone z.lua
-git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
+# Install zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 # Neovim config
 mkdir ~/.config
