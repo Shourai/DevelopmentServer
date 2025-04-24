@@ -21,8 +21,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # Install neovim
-curl -sL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar -xzf - -C $HOME
-ln -fs $HOME/nvim-linux64/bin/nvim ~/.local/bin/
+curl -sL https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz | tar -xzf - -C $HOME
+ln -fs $HOME/nvim-linux-x86_64/bin/nvim ~/.local/bin/
 
 # Install lazygit
 MY_FLAVOR=Linux_x86_64
